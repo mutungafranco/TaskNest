@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gradient-start: #f0f9ff;
+  --gradient-end: #e0f2fe;
+}
+
+body {
+  background: linear-gradient(-45deg, var(--gradient-start), var(--gradient-end));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+    --gradient-start: #f0f9ff;
+    --gradient-end: #e0f2fe;
+  }
+  25% {
+    --gradient-start: #f0fdf4;
+    --gradient-end: #dcfce7;
+  }
+  50% {
+    background-position: 100% 50%;
+    --gradient-start: #fdf2f8;
+    --gradient-end: #fce7f3;
+  }
+  75% {
+    --gradient-start: #f5f3ff;
+    --gradient-end: #ede9fe;
+  }
+  100% {
+    background-position: 0% 50%;
+    --gradient-start: #f0f9ff;
+    --gradient-end: #e0f2fe;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.task-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.task-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.task-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.task-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
